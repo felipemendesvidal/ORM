@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Senai.ef.core.Domains
 {
-    public class PedidoItem
+    public class PedidoItem : BaseDomains
     {
-        [Key]
-            public Guid Id { get; set; }
+        
         //relacionamento com a class pedido 
 
         [ForeignKey("IdPedido")]
@@ -22,12 +21,6 @@ namespace Senai.ef.core.Domains
             public Guid IdProduto { get; set; }
             public Produto Produto { get; set; }
 
-        public PedidoItem()
-        {
-            Id = Guid.NewGuid();
-            IdPedido = Guid.NewGuid();
-            IdProduto = Guid.NewGuid();
-
-        }
+      
     }   
 }
